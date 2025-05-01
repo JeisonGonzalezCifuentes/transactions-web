@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+body {
+  background-color: #000000;
+  color: #03ff94;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card {
+  background-color: #292b2a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #ffffff;
+}
+
+.card h2 {
+  color: #03ff94;
+}
+
+.bg-radial-green {
+  background: radial-gradient(circle at center, #254437 0%, #000000 100%);
+}
