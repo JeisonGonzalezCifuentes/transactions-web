@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# Tenpo Transactions Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the frontend user interface for the Tenpo Technical Challenge. It allows users to create, view, edit, and delete transactions by interacting with the [backend API](../backend/README.md).
 
-Currently, two official plugins are available:
+Built with React, TypeScript, and Vite for a fast and modern development experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+-   View a list of transactions.
+-   Create new transactions.
+-   Edit existing transactions.
+-   Delete transactions.
+-   User-friendly interface.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Before you begin, ensure you have the following installed:
+-   **Node.js:** (LTS version recommended, e.g., v18.x or v20.x). You can download it from [nodejs.org](https://nodejs.org/).
+-   **npm** (comes with Node.js) or **yarn** (optional, can be installed via npm: `npm install --global yarn`).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+You can verify your Node.js and npm installations by running:
+```bash
+node -v
+npm -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these steps to get the frontend application running locally:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1.  **Clone the Repository (if you haven't already):**
+    ```bash
+    git clone <repository-url> # e.g., git clone https://github.com/your-username/technical-challenge-tenpo.git
+    cd technical-challenge-tenpo/frontend
+    ```
+    If you've already cloned and are in the `technical-challenge-tenpo` directory, just `cd frontend`.
+
+2.  **Install Dependencies:**
+    Navigate to the `frontend` directory and install the project dependencies.
+    Using npm:
+    ```bash
+    npm install
+    ```
+    Or using yarn:
+    ```bash
+    yarn install
+    ```
+
+3.  **Configure Backend API URL (if necessary):**
+    The application will attempt to connect to the backend API. By default, it might assume the backend is running on `http://localhost:8080`. If your backend is running on a different URL or port, you may need to configure this.
+    Check for an environment variable configuration, typically in a `.env` file at the root of the `frontend` directory (e.g., `VITE_API_BASE_URL`).
+    Example `.env` file content:
+    ```env
+    VITE_API_BASE_URL=http://localhost:8080/api
+    ```
+    *Note: Ensure the backend server is running before starting the frontend.*
+
+4.  **Run the Development Server:**
+    Once dependencies are installed, you can start the Vite development server.
+    Using npm:
+    ```bash
+    npm run dev
+    ```
+    Or using yarn:
+    ```bash
+    yarn dev
+    ```
+    This will typically start the application on `http://localhost:5173` (Vite's default port, but check your terminal output for the exact URL). The application will automatically reload if you make changes to the code.
+
+## Building for Production
+
+To create an optimized production build of the application:
+Using npm:
+```bash
+npm run build
 ```
+Or using yarn:
+```bash
+yarn build
+```
+This command will generate static assets in the `dist` folder, which can then be deployed to any static file hosting service.
+
+## Key Technologies
+
+-   **React:** A JavaScript library for building user interfaces.
+-   **TypeScript:** A superset of JavaScript that adds static typing.
+-   **Vite:** A next-generation frontend tooling that provides a faster and leaner development experience.
+-   **[Other libraries/frameworks used, e.g., Tailwind CSS, Axios, React Router, Zustand/Redux, etc.]** (Update this list as applicable)
